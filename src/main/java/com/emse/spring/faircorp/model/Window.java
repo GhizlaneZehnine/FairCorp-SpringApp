@@ -22,9 +22,17 @@ public class Window {
     public Window() {
     }
 
-    public Window(String name, WindowStatus status) {
+    public Window(Room room, String name, WindowStatus status) {
         this.windowStatus = status;
         this.name = name;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public Long getId() {
