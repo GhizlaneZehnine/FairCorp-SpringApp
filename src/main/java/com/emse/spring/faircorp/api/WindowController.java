@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@CrossOrigin
 @RestController // (1)
 @RequestMapping("/api/windows") // (2)
 @Transactional // (3)

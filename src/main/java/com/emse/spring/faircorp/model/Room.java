@@ -25,13 +25,31 @@ public class Room {
     @OneToMany(mappedBy = "room")
     private List<Window> windows;
 
+    @ManyToOne
+    private Building building;
+
     public Room() {
+    }
+
+    public Room(Long id, int floor, String name, Building building) {
+        this.id = id;
+        this.floor = floor;
+        this.name = name;
+        this.building = building;
     }
 
     public Room(Long id, int floor, String name) {
         this.id = id;
         this.floor = floor;
         this.name = name;
+    }
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
     }
 
     public Long getId() {

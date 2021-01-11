@@ -7,6 +7,7 @@ public class RoomDto {
     private Long id;
     private String name;
     private Double currentTemperature;
+    private Long buildingId;
 
 
     public RoomDto() {
@@ -17,8 +18,16 @@ public class RoomDto {
         this.name = room.getName();
         this.id = room.getId();
         this.currentTemperature = room.getCurrentTemperature();
+        this.buildingId = room.getBuilding().getId();
     }
 
+    public Long getBuildingId() {
+        return buildingId;
+    }
+
+    public void setBuildingId(Long buildingId) {
+        this.buildingId = buildingId;
+    }
 
     public Long getId() {
         return id;
