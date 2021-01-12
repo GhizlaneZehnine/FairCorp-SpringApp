@@ -14,11 +14,17 @@ import java.util.stream.Collectors;
 @Transactional // (3)
 public class RoomController {
     RoomDAO roomDao;
+
+    public RoomController(RoomDAO roomDao) {
+        this.roomDao = roomDao;
+    }
+
     @GetMapping // (5)
     public List<RoomDto> finAll(){
         return roomDao.findAll().stream().map(RoomDto::new).collect(Collectors.toList());
     }
 
+    @GetMapping(path = "/{id}")
     public RoomDto finById(@PathVariable Long id){
         return roomDao.findById(id).map(RoomDto::new).orElse(null);
     }
